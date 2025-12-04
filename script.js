@@ -11,11 +11,11 @@ async function buscarTempo() {
         return;
     }
 
-    const apiKey = "0c00ff5a64d0c7a7832d8a4c02aeb7a3";
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&units=metric&lang=pt_br&appid=${apiKey}`;
+    const apiKey = "5104515b692a20f0186e41d6757103ee";
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${apiKey}&units=metric&lang=pt_br`;
 
     try {
-        const responde = await fetch(url);
+        const response = await fetch(url);
 
         if (!Response.ok) {
             throw new Error("Cidade não encontrada ou limite excedido.")

@@ -1,62 +1,120 @@
+/* ===== RESET & BODY ===== */
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
     background: linear-gradient(135deg, #4facfe, #00f2fe);
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
     color: #fff;
-
+    overflow: hidden;
 }
 
+/* ===== CONTAINER ===== */
 .container {
-    width: 350px;
-    padding: 25px;
-    background: rgba(255, 255, 255, 0.1);
+    width: 360px;
+    padding: 32px 28px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
     text-align: center;
-    backdrop-filter: blur(8px);
-
+    animation: fadeIn 0.7s ease-out;
 }
 
+/* ===== SEARCH BOX ===== */
 .search-box {
     display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
-
+    gap: 12px;
+    margin-bottom: 20px;
 }
 
 .search-box input {
     flex: 1;
-    padding: 10px;
-    border-radius: 8px;
+    padding: 12px 14px;
+    border-radius: 10px;
     border: none;
-
+    background: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
 }
 
+.search-box input::placeholder {
+    color: #e8e8e8;
+}
+
+.search-box input:focus {
+    background: rgba(255, 255, 255, 0.45);
+    transform: scale(1.02);
+}
+
+/* ===== BUTTON ===== */
 .search-box button {
-    padding: 10px 15px;
+    padding: 12px 18px;
     background: #003cff;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     font-weight: bold;
-
+    font-size: 15px;
+    box-shadow: 0 4px 12px rgba(0, 60, 255, 0.4);
+    transition: 0.25s ease-out;
 }
 
+.search-box button:hover {
+    background: #1a54ff;
+    transform: scale(1.05);
+}
+
+/* ===== ERROR MESSAGE ===== */
 .erro {
-    color: #ff4d4d;
+    color: #ff6b6b;
     font-weight: bold;
-
+    margin-top: 8px;
+    animation: shake 0.3s ease-in-out;
 }
 
+/* ===== RESULT AREA ===== */
 .resultado img {
-    width: 90px;
-
+    width: 100px;
+    margin-top: 12px;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
 }
 
+/* ===== HIDDEN ===== */
 .hidden {
     display: none;
+}
 
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    50% { transform: translateX(4px); }
+    75% { transform: translateX(-4px); }
+    100% { transform: translateX(0); }
+}
+
+.banner {
+    width: 100%;
+    border-radius: 14px;
+    margin-bottom: 18px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    animation: fadeIn 1s ease-out;
 }
