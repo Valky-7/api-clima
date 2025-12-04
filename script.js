@@ -3,7 +3,7 @@ async function buscarTempo() {
     const erro = document.getElementById("erro");
     const resultado = document.getElementById("resultado");
 
-    erro.textContet = "";
+    erro.textContent = "";
     resultado.classList.add("hidden");
 
     if (cidade === "") {
@@ -12,16 +12,16 @@ async function buscarTempo() {
     }
 
     const apiKey = "5104515b692a20f0186e41d6757103ee";
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${apiKey}&units=metric&lang=pt_br`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(cidade)}&appid=${apiKey}&units=metric&lang=pt_br`;
 
     try {
         const response = await fetch(url);
 
-        if (!Response.ok) {
-            throw new Error("Cidade não encontrada ou limite excedido.")
+        if (!response.ok) {
+            throw new Error("Cidade não encontrada ou limite excedido.");
         }
 
-        const data = Response.json();
+        const data = await response.json();
 
         document.getElementById("cidadeTitulo").textContent = data.name;
         document.getElementById("temp").textContent = data.main.temp;
@@ -30,7 +30,7 @@ async function buscarTempo() {
         document.getElementById("descricao").textContent = data.weather[0].description;
 
         const icone = data.weather[0].icon;
-        document.getElementById("icone").scr = `https://openweathermap.org/img/wn${icone2}@2x.png`;
+        document.getElementById("icone").src = `https://openweathermap.org/img/wn/${icone}@2x.png`;
 
         resultado.classList.remove("hidden");
 

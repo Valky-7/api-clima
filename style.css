@@ -2,88 +2,122 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Inter', Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    font-family: 'Inter', Arial, sans-serif;
+    background: linear-gradient(135deg, #4f7cff, #6ae2ff);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    color: #fff;
-    overflow: hidden;
+    color: #1d1d1d;
+    letter-spacing: 0.2px;
 }
 
-/* ===== CONTAINER ===== */
+/* ===== CONTAINER (PREMIUM GLASS) ===== */
 .container {
-    width: 360px;
-    padding: 32px 28px;
-    background: rgba(255, 255, 255, 0.12);
-    border-radius: 18px;
-    backdrop-filter: blur(14px);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+    width: 380px;
+    padding: 32px;
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 26px;
+    backdrop-filter: blur(25px) saturate(150%);
+    -webkit-backdrop-filter: blur(25px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
     text-align: center;
-    animation: fadeIn 0.7s ease-out;
+    animation: fadeIn 0.65s ease-out;
+}
+
+/* ===== BANNER ===== */
+.banner {
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 26px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== TITLES ===== */
+h1 {
+    margin-bottom: 22px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+h2 {
+    font-size: 21px;
+    margin-bottom: 6px;
+    color: #fff;
 }
 
 /* ===== SEARCH BOX ===== */
 .search-box {
     display: flex;
-    gap: 12px;
-    margin-bottom: 20px;
+    gap: 10px;
+    margin-bottom: 24px;
 }
 
 .search-box input {
     flex: 1;
-    padding: 12px 14px;
-    border-radius: 10px;
-    border: none;
-    background: rgba(255, 255, 255, 0.3);
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.35);
     color: #fff;
     font-size: 15px;
-    outline: none;
-    transition: 0.3s;
+    font-weight: 500;
+    transition: 0.25s ease-in-out;
+    backdrop-filter: blur(6px);
 }
 
 .search-box input::placeholder {
-    color: #e8e8e8;
+    color: #eaeaea;
 }
 
 .search-box input:focus {
-    background: rgba(255, 255, 255, 0.45);
-    transform: scale(1.02);
+    border-color: #ffffff;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.55);
+    outline: none;
 }
 
 /* ===== BUTTON ===== */
 .search-box button {
-    padding: 12px 18px;
-    background: #003cff;
-    color: white;
+    padding: 14px 18px;
+    background: linear-gradient(135deg, #4a7bff, #70e4ff);
+    color: #fff;
     border: none;
-    border-radius: 10px;
+    border-radius: 14px;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 15px;
-    box-shadow: 0 4px 12px rgba(0, 60, 255, 0.4);
     transition: 0.25s ease-out;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
 .search-box button:hover {
-    background: #1a54ff;
-    transform: scale(1.05);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.28);
 }
 
 /* ===== ERROR MESSAGE ===== */
 .erro {
-    color: #ff6b6b;
-    font-weight: bold;
-    margin-top: 8px;
-    animation: shake 0.3s ease-in-out;
+    color: #ff4b4b;
+    font-weight: 600;
+    margin: -8px 0 10px;
 }
 
 /* ===== RESULT AREA ===== */
 .resultado img {
-    width: 100px;
-    margin-top: 12px;
-    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
+    width: 115px;
+    margin-top: 10px;
+    filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.25));
+}
+
+.resultado p {
+    font-size: 16px;
+    margin: 8px 0;
+    color: #ffffff;
+    font-weight: 400;
 }
 
 /* ===== HIDDEN ===== */
@@ -91,7 +125,7 @@ body {
     display: none;
 }
 
-/* ===== ANIMATIONS ===== */
+/* ===== ANIMATION ===== */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -101,20 +135,4 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-@keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-4px); }
-    50% { transform: translateX(4px); }
-    75% { transform: translateX(-4px); }
-    100% { transform: translateX(0); }
-}
-
-.banner {
-    width: 100%;
-    border-radius: 14px;
-    margin-bottom: 18px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-    animation: fadeIn 1s ease-out;
 }
