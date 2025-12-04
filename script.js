@@ -28,6 +28,7 @@ async function buscarTempo() {
         document.getElementById("umidade").textContent = data.main.humidity;
         document.getElementById("vento").textContent = data.wind.speed;
         document.getElementById("descricao").textContent = data.weather[0].description;
+        document.getElementById("visibilidade").textContent = data.visibility;
 
         const icone = data.weather[0].icon;
         document.getElementById("icone").src = `https://openweathermap.org/img/wn/${icone}@2x.png`;
