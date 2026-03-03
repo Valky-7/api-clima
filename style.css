@@ -1,164 +1,266 @@
 /* ===== RESET & BODY ===== */
 body {
     margin: 0;
+    /* Remove margem padrão do navegador */
     padding: 0;
+    /* Remove espaçamento interno padrão */
     font-family: 'Inter', Arial, sans-serif;
+    /* Define a fonte principal do site */
     background: radial-gradient(circle at 40% 20%, #0b0d12, #0a0c10, #050607);
+    /* Fundo com gradiente radial escuro */
+
     display: flex;
+    /* Ativa Flexbox */
     justify-content: center;
+    /* Centraliza horizontalmente */
     align-items: center;
+    /* Centraliza verticalmente */
     min-height: 100vh;
+    /* Altura mínima igual à altura da tela */
     color: #e6e6e6;
+    /* Cor padrão do texto */
     letter-spacing: 0.3px;
+    /* Pequeno espaçamento entre letras */
 }
 
 /* ===== CONTAINER (DARK GLASS) ===== */
 .container {
     width: 380px;
+    /* Largura fixa do card */
     padding: 32px;
+    /* Espaçamento interno */
     background: rgba(255, 255, 255, 0.05);
+    /* Fundo branco bem transparente */
     border-radius: 22px;
+    /* Bordas arredondadas */
     backdrop-filter: blur(22px) saturate(140%);
+    /* Efeito de vidro (blur + saturação) */
+
     -webkit-backdrop-filter: blur(22px) saturate(140%);
+    /* Compatibilidade com Safari */
+
     border: 1px solid rgba(255, 255, 255, 0.07);
+    /* Borda sutil transparente */
+
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+    /* Sombra profunda */
+
     text-align: center;
+    /* Centraliza o texto */
     animation: fadeIn 0.6s ease-out;
+    /* Animação ao aparecer */
     transition: 0.3s ease;
+    /* Suaviza transições */
 }
 
 .container:hover {
     transform: translateY(-4px);
+    /* Move levemente para cima ao passar o mouse */
 }
 
 /* ===== BANNER ===== */
 .banner {
     width: 100%;
+    /* Ocupa toda a largura do container */
     border-radius: 16px;
+    /* Bordas arredondadas */
     margin-bottom: 26px;
+    /* Espaço abaixo da imagem */
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+    /* Sombra na imagem */
     opacity: 0.95;
+    /* Leve transparência */
     transition: 0.25s ease;
+    /* Transição suave */
 }
 
 .banner:hover {
     transform: scale(1.02);
+    /* Leve aumento ao passar o mouse */
     opacity: 1;
+    /* Remove transparência */
 }
 
 /* ===== TITLES ===== */
 h1 {
     margin-bottom: 16px;
+    /* Espaço abaixo do título principal */
     font-size: 26px;
+    /* Tamanho da fonte */
     font-weight: 700;
+    /* Negrito forte */
     color: #fafafa;
+    /* Cor quase branca */
     text-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
+    /* Brilho sutil no texto */
 }
 
 h2 {
     font-size: 20px;
+    /* Tamanho do subtítulo */
     margin-bottom: 6px;
+    /* Espaço abaixo */
     color: #d9d9d9;
+    /* Cor cinza clara */
 }
 
 /* ===== SEARCH BOX ===== */
 .search-box {
     display: flex;
+    /* Coloca input e botão lado a lado */
     gap: 10px;
+    /* Espaço entre eles */
     margin-bottom: 24px;
+    /* Espaço abaixo */
 }
 
 .search-box input {
     flex: 1;
+    /* Ocupa todo o espaço disponível */
     padding: 14px 16px;
+    /* Espaçamento interno */
     border-radius: 14px;
+    /* Bordas arredondadas */
     border: 1px solid rgba(255, 255, 255, 0.08);
+    /* Borda sutil */
     background: rgba(255, 255, 255, 0.06);
+    /* Fundo transparente */
     color: #f6f6f6;
+    /* Cor do texto */
     font-size: 15px;
+    /* Tamanho da fonte */
     font-weight: 500;
+    /* Peso médio */
     transition: 0.25s ease;
+    /* Transição suave */
     backdrop-filter: blur(6px);
+    /* Efeito vidro leve */
 }
 
 .search-box input::placeholder {
     color: #8b8b8b;
+    /* Cor do texto placeholder */
 }
 
 .search-box input:focus {
     border-color: #6da8ff;
+    /* Cor da borda ao focar */
     box-shadow: 0 0 12px rgba(109, 168, 255, 0.4);
+    /* Brilho azul ao focar */
+
     background: rgba(255, 255, 255, 0.12);
+    /* Fundo mais claro */
     outline: none;
+    /* Remove borda padrão do navegador */
     transform: scale(1.02);
+    /* Pequeno zoom */
 }
 
 /* ===== BUTTON ===== */
 .search-box button {
     padding: 14px 18px;
+    /* Espaçamento interno */
     background: linear-gradient(135deg, #355dff, #5cc3ff);
+    /* Gradiente azul */
+
     color: #fff;
+    /* Texto branco */
     border: none;
+    /* Remove borda padrão */
     border-radius: 14px;
+    /* Bordas arredondadas */
     cursor: pointer;
+    /* Cursor de clique */
     font-weight: 600;
+    /* Negrito */
     font-size: 15px;
+    /* Tamanho da fonte */
     transition: 0.25s ease-out;
+    /* Transição suave */
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    /* Sombra do botão */
 }
 
 .search-box button:hover {
     transform: translateY(-3px) scale(1.05);
+    /* Move para cima e aumenta levemente */
+
     box-shadow: 0 12px 22px rgba(0, 0, 0, 0.6);
+    /* Sombra mais intensa */
+
     filter: brightness(1.1);
+    /* Deixa um pouco mais claro */
 }
 
 .search-box button:active {
     transform: scale(0.95);
+    /* Efeito de clique pressionado */
 }
 
 /* ===== ERROR MESSAGE ===== */
 .erro {
     color: #ff4d4d;
+    /* Vermelho para erro */
     font-weight: 600;
+    /* Negrito */
     margin: -6px 0 10px;
+    /* Ajuste de espaçamento */
     font-size: 14px;
+    /* Tamanho menor */
     opacity: 0.95;
+    /* Leve transparência */
 }
 
 /* ===== RESULT AREA ===== */
 .resultado img {
     width: 120px;
+    /* Tamanho do ícone */
     margin-top: 10px;
+    /* Espaço acima */
     filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.7));
+    /* Sombra no ícone */
+
     transition: 0.25s ease;
+    /* Transição suave */
 }
 
 .resultado img:hover {
     transform: scale(1.06);
+    /* Aumenta ao passar o mouse */
 }
 
 .resultado p {
     font-size: 16px;
+    /* Tamanho do texto */
     margin: 8px 0;
+    /* Espaçamento vertical */
     color: #dadada;
+    /* Cor cinza clara */
     font-weight: 400;
+    /* Peso normal */
     letter-spacing: 0.4px;
+    /* Espaçamento entre letras */
 }
 
 /* ===== HIDDEN ===== */
 .hidden {
     display: none;
+    /* Esconde o elemento */
 }
 
 /* ===== ANIMATION ===== */
 @keyframes fadeIn {
     from {
         opacity: 0;
+        /* Começa invisível */
         transform: translateY(20px);
+        /* Começa deslocado para baixo */
     }
+
     to {
         opacity: 1;
+        /* Fica visível */
         transform: translateY(0);
+        /* Volta à posição normal */
     }
 }

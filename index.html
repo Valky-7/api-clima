@@ -1,41 +1,80 @@
 <!DOCTYPE html>
+<!-- Define o tipo do documento como HTML5 -->
+
 <html lang="pt-BR">
+<!-- Início do documento HTML e define o idioma como Português do Brasil -->
 
 <head>
     <meta charset="UTF-8">
+    <!-- Define a codificação de caracteres (permite acentos e caracteres especiais) -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Faz o site se adaptar a diferentes tamanhos de tela (responsivo) -->
+
     <title>Previsão do Tempo</title>
+    <!-- Título que aparece na aba do navegador -->
+
     <link rel="stylesheet" href="style.css">
+    <!-- Conecta o arquivo CSS externo para estilização -->
 </head>
 
 <body>
+    <!-- Corpo da página (conteúdo visível ao usuário) -->
 
     <div class="container">
+        <!-- Div principal que envolve todo o conteúdo -->
 
         <img src="weather-banner.png" alt="Clima" class="banner">
+        <!-- Imagem de banner no topo da aplicação -->
 
         <h1>Previsão do Tempo</h1>
+        <!-- Título principal da página -->
 
         <div class="search-box">
+            <!-- Área que contém o campo de busca e o botão -->
+
             <input type="text" id="cidade" placeholder="Digite o nome da cidade...">
+            <!-- Campo de texto onde o usuário digita o nome da cidade -->
+            <!-- O id permite que o JavaScript acesse esse elemento -->
+
             <button onclick="buscarTempo()">Buscar</button>
+            <!-- Botão que executa a função buscarTempo() ao ser clicado -->
         </div>
 
         <p id="erro" class="erro"></p>
+        <!-- Parágrafo usado para exibir mensagens de erro -->
 
         <div id="resultado" class="resultado hidden">
+            <!-- Div que exibirá os resultados da previsão -->
+            <!-- A classe "hidden" normalmente deixa ela escondida inicialmente -->
+
             <h2 id="cidadeTitulo"></h2>
+            <!-- Mostra o nome da cidade pesquisada -->
+
             <img id="icone" />
+            <!-- Exibe o ícone representando o clima (sol, chuva, etc.) -->
+
             <p><strong>Temperatura:</strong> <span id="temp"></span>ºC</p>
+            <!-- Mostra a temperatura da cidade -->
+
             <p><strong>Umidade:</strong> <span id="umidade"></span>%</p>
+            <!-- Mostra a porcentagem de umidade do ar -->
+
             <p><strong>Vento:</strong> <span id="vento"></span> km/h</p>
+            <!-- Mostra a velocidade do vento -->
+
             <p><strong>Condição:</strong> <span id="descricao"></span></p>
+            <!-- Mostra a descrição do clima (ex: nublado, ensolarado) -->
+
             <p><strong>Visibilidade:</strong> <span id="visibilidade"></span></p>
+            <!-- Mostra a distância de visibilidade -->
         </div>
 
     </div>
 
     <script src="script.js"></script>
+    <!-- Conecta o arquivo JavaScript responsável pela lógica da aplicação -->
 
 </body>
+
 </html>
